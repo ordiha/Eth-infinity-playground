@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GiveawayNFT {
+    string public name;
+    string public symbol;
+    string public baseURI;
+    uint256 private _nextId = 1;
+    mapping(uint256 => address) private _owner;
+    mapping(address => uint256) private _balance;
+    address public admin;
+
+    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+    event BaseURIChanged(string newBaseURI);
+
+    modifier onlyAdmin() { require(msg.sender == admin, "only admin"); _; }
+
+    constructor(string memory _name, string memory _symbol, string memory _baseURI) {
+        name = _name; symbol = _symbol; baseURI = _baseURI; admin = msg.sender;
+    }
+
+    function giveawayMint(address[] calldata recipients) external onlyAdmin {
+        for (uint256 i = 0; i < recipients.length; i++) {
+            address to = recipients[i];
+            require(to != address(0), "zero addr");
+            uint256 id = _nextId++;
+            _owner[id] = to;
+            _balance[to] += 1;
+            emit Transfer(address(0), to, id);
+        }
+    }
+
+    function ownerOf(uint256 tokenId) public view returns (address) {
+        address o = _owner[tokenId]; require(o != address(0), "nonexistent"); return o;
+    }
+    function balanceOf(address ownerAddr) public view returns (uint256) {
+        require(ownerAddr != address(0), "zero addr"); return _balance[ownerAddr];
+    }
+    function tokenURI(uint256 tokenId) public view returns (string memory) {
+        require(_owner[tokenId] != address(0), "nonexistent");
+        return string(abi.encodePacked(baseURI, _toString(tokenId)));
+    }
+    function setBaseURI(string calldata newBase) external onlyAdmin {
+        baseURI = newBase; emit BaseURIChanged(newBase);
+    }
+
+    function _toString(uint256 value) internal pure returns (string memory) {
+        if (value == 0) return "0";
+        uint256 temp = value; uint256 digits;
+        while (temp != 0) { digits++; temp /= 10; }
+        bytes memory buffer = new bytes(digits);
+        while (value != 0) { digits -= 1; buffer[digits] = bytes1(uint8(48 + uint256(value % 10))); value /= 10; }
+        return string(buffer);
+    }
+}
