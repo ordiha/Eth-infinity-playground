@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract MessageNFT {
+    uint public nextId=1; mapping(uint=>address) public owner; mapping(uint=>string) public msgOf;
+    function mint(string calldata m) external { owner[nextId]=msg.sender; msgOf[nextId]=m; nextId++; }
+    function readMsg(uint id) external view returns(address,string memory,uint){ return (owner[id], msgOf[id], block.timestamp); }
+}
