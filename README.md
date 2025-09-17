@@ -9,9 +9,6 @@ https://basescan.org/address/0x79f6e18a8376b02b35c1d5c02da86ec03ca6d57d#code
 ColorNFT: 0x7e5b2523Da5D63e500b9b050f45f993b811c6548
 https://basescan.org/address/0x7e5b2523da5d63e500b9b050f45f993b811c6548#code
 
-MessageNFT: 0xAC3fDF094d4167D8238ba980F70792E681b487A5
-https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code
-
 TimeNFT: 0x6A7b0FD9Ea1809a5F0F4369e191a0B021D11BCD5
 https://basescan.org/address/0x6a7b0fd9ea1809a5f0f4369e191a0b021d11bcd5#code
 
@@ -23,3 +20,9 @@ https://basescan.org/address/0x2fdef913f4a1bcd05ada45f4556d54f6df5305e1#code
 
 FreeBadgeNFT: 0x2533d3769d333f96D446f9035d025cf986773D83
 https://basescan.org/address/0x2533d3769d333f96d446f9035d025cf986773d83#code
+
+TimeNFT: 0xB98216021f341f33828aDE87FBF543428F564AeB
+https://basescan.org/address/0xb98216021f341f33828ade87fbf543428f564aeb#code
+
+MessageNFT: 0xAC3fDF094d4167D8238ba980F70792E681b487A5
+https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code
