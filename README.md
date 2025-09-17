@@ -29,3 +29,6 @@ https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code
 
 ProjectToken: 0x8A78A66E45dFb17A7d2C2f54c0c265d62336591F
 https://basescan.org/address/0x8a78a66e45dfb17a7d2c2f54c0c265d62336591f#code
+
+BurnToken: 0xA94759CaeAD1b3b7bF5EAC55D70926b76d6F9788
+https://basescan.org/address/0xa94759caead1b3b7bf5eac55d70926b76d6f9788#code
