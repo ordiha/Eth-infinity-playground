@@ -26,3 +26,6 @@ https://basescan.org/address/0xb98216021f341f33828ade87fbf543428f564aeb#code
 
 MessageNFT: 0xAC3fDF094d4167D8238ba980F70792E681b487A5
 https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code
+
+ProjectToken: 0x8A78A66E45dFb17A7d2C2f54c0c265d62336591F
+https://basescan.org/address/0x8a78a66e45dfb17a7d2c2f54c0c265d62336591f#code
