@@ -20,3 +20,6 @@ https://basescan.org/address/0xfab4d080d6b1af6d84685148f9d6a7195f86b829#code
 
 EmojiNFT: 0x2fdEf913F4a1bCD05ADA45F4556d54F6df5305e1
 https://basescan.org/address/0x2fdef913f4a1bcd05ada45f4556d54f6df5305e1#code
+
+FreeBadgeNFT: 0x2533d3769d333f96D446f9035d025cf986773D83
+https://basescan.org/address/0x2533d3769d333f96d446f9035d025cf986773d83#code
