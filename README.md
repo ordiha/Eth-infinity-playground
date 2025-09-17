@@ -17,3 +17,6 @@ https://basescan.org/address/0x6a7b0fd9ea1809a5f0f4369e191a0b021d11bcd5#code
 
 EvolvingNFT: 0xFAb4D080D6b1AF6d84685148f9D6a7195f86b829
 https://basescan.org/address/0xfab4d080d6b1af6d84685148f9d6a7195f86b829#code
+
+EmojiNFT: 0x2fdEf913F4a1bCD05ADA45F4556d54F6df5305e1
+https://basescan.org/address/0x2fdef913f4a1bcd05ada45f4556d54f6df5305e1#code
