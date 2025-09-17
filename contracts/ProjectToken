@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract SimpleToken {
+    string public name="Simple"; string public symbol="SMP"; uint8 public decimals=18;
+    mapping(address=>uint) public balance;
+    function mint(uint256 amount) external { balance[msg.sender]+=amount; }
+    function transfer(address to,uint256 amt) external returns(bool){ require(balance[msg.sender]>=amt); balance[msg.sender]-=amt; balance[to]+=amt; return true;}
+    function bal(address a) external view returns(uint){ return balance[a]; }
+}
