@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract EvolvingNFT {
+    mapping(uint=>address) public owner; mapping(uint=>string) public meta; uint public next=1;
+    function mint(string calldata m) external { owner[next]=msg.sender; meta[next]=m; next++; }
+    function update(uint id,string calldata m) external { require(owner[id]==msg.sender,"not owner"); meta[id]=m; }
+    function read(uint id) external view returns(string memory){ return meta[id]; }
+}
