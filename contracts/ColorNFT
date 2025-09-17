@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract ColorNFT {
+    string public baseURI; uint256 public nextId = 1;
+    mapping(uint=>address) public ownerOf; mapping(uint=>string) public colorOf;
+    constructor(string memory _base){ baseURI=_base; }
+    function mint(string calldata colorHex) external { ownerOf[nextId]=msg.sender; colorOf[nextId]=colorHex; nextId++; }
+    function tokenURI(uint id) public view returns(string memory){ return string(abi.encodePacked(baseURI,colorOf[id])); }
+}
