@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract NameToken { struct T{address who; string name;} T[] public items;
+  function mint(string calldata n) external { items.push(T(msg.sender,n)); }
+  function total() external view returns(uint){ return items.length; }
+  function get(uint i) external view returns(address,string memory){ return (items[i].who,items[i].name); }
+}
