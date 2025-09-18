@@ -44,3 +44,6 @@ https://basescan.org/address/0x791dce76c244dbb72e99f5f87bd843ff229f8bde#code
 
 PraiseToken: 0xF98d56aCB775217409BA516c79ca5BAdf976125E
 https://basescan.org/address/0xf98d56acb775217409ba516c79ca5badf976125e#code
+
+MemoToken: 0xa4125F4dD0369Fa7b4153B6Fb26931d16Ac159A1
+https://basescan.org/address/0xa4125f4dd0369fa7b4153b6fb26931d16ac159a1#code
