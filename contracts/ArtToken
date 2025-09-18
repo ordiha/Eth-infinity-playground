@@ -1,0 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract ArtToken { uint public idx; mapping(uint=>string) public color; mapping(uint=>address) public owner;
+  function mint(string calldata colorHex) external { idx++; owner[idx]=msg.sender; color[idx]=colorHex; }
+  function read(uint i) external view returns(address,string memory){ return (owner[i],color[i]); }
+}
