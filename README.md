@@ -32,3 +32,6 @@ https://basescan.org/address/0x8a78a66e45dfb17a7d2c2f54c0c265d62336591f#code
 
 BurnToken: 0xA94759CaeAD1b3b7bF5EAC55D70926b76d6F9788
 https://basescan.org/address/0xa94759caead1b3b7bf5eac55d70926b76d6f9788#code
+
+FaucetToken: 0x497C8C54B603b02Ab2a8f11387c5D6bEC19EE237
+https://basescan.org/address/0x497c8c54b603b02ab2a8f11387c5d6bec19ee237#code
