@@ -38,3 +38,6 @@ https://basescan.org/address/0x497c8c54b603b02ab2a8f11387c5d6bec19ee237#code
 
 NameToken: 0x1da06bd89f7386E919934D396a18DfE123Ac2214
 https://basescan.org/address/0x1da06bd89f7386e919934d396a18dfe123ac2214#code
+
+ArtToken: 0x791DCE76c244DBb72e99F5f87BD843fF229f8BdE
+https://basescan.org/address/0x791dce76c244dbb72e99f5f87bd843ff229f8bde#code
