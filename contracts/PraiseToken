@@ -1,0 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract PraiseToken { struct P{address who; string text;} P[] public list;
+  function mint(string calldata t) external { list.push(P(msg.sender,t)); }
+  function total() external view returns(uint){ return list.length; }
+}
