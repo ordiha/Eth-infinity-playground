@@ -63,3 +63,6 @@ https://basescan.org/address/0x6d0615e1dd679314213d39d06e5175322fdcc346#code
 Lottery: 0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf
 https://basescan.org/address/0x2edb3668a8c37a1b1d1934e4247da47fa2c73daf#code
 
+SavingsPool: 0xa43BC9AAFb69608a6bF1C84CBA1258bBa53d9B5D
+https://basescan.org/address/0xa43bc9aafb69608a6bf1c84cba1258bba53d9b5d#code
+
