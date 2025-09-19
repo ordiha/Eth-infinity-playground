@@ -54,6 +54,9 @@ https://basescan.org/address/0xf7147a1a15dace03308c57b6a8001a4e0dd5053a#code
 DonationTracker2: 0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB
 https://basescan.org/address/0x9ddaf52d93fe53715dc510190b2ddd1d1cafa8fb#code
 
+EscrowOpen: 0x4e3DCAd4Cf1ac9cCdD93aC2b395C3fBA242c521b
+https://basescan.org/address/0x4e3dcad4cf1ac9ccdd93ac2b395c3fba242c521b#code
+
 CrowdfundingOpen: 0x6d0615e1dd679314213D39D06E5175322fDcc346
 https://basescan.org/address/0x6d0615e1dd679314213d39d06e5175322fdcc346#code
 
