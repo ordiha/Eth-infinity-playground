@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract TipPool {
+    mapping(address=>uint) public contributed; uint public total;
+    function tip() external payable { contributed[msg.sender]+=msg.value; total+=msg.value; }
+    function myShare(address a) external view returns(uint){ return contributed[a]; }
+    function withdrawMy() external { uint v=contributed[msg.sender]; contributed[msg.sender]=0; payable(msg.sender).transfer(v); }
+}
