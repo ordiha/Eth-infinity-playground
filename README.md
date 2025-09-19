@@ -47,3 +47,6 @@ https://basescan.org/address/0xf98d56acb775217409ba516c79ca5badf976125e#code
 
 MemoToken: 0xa4125F4dD0369Fa7b4153B6Fb26931d16Ac159A1
 https://basescan.org/address/0xa4125f4dd0369fa7b4153b6fb26931d16ac159a1#code
+
+KarmaToken: 0xF7147a1a15DaCe03308c57b6A8001a4E0dd5053a
+https://basescan.org/address/0xf7147a1a15dace03308c57b6a8001a4e0dd5053a#code
