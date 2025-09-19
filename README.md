@@ -57,3 +57,6 @@ https://basescan.org/address/0x9ddaf52d93fe53715dc510190b2ddd1d1cafa8fb#code
 CrowdfundingOpen: 0x6d0615e1dd679314213D39D06E5175322fDcc346
 https://basescan.org/address/0x6d0615e1dd679314213d39d06e5175322fdcc346#code
 
+Lottery: 0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf
+https://basescan.org/address/0x2edb3668a8c37a1b1d1934e4247da47fa2c73daf#code
+
