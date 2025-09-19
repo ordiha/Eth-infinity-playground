@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract CrowdfundingOpen {
+    address public creator; uint public deadline; uint public raised;
+    mapping(address=>uint) public contributions;
+    constructor(uint _duration){ creator=msg.sender; deadline=block.timestamp+_duration; }
+    function contribute() external payable { require(block.timestamp<deadline,"ended"); contributions[msg.sender]+=msg.value; raised+=msg.value; }
+    function withdraw() external { require(msg.sender==creator,"not creator"); payable(creator).transfer(address(this).balance); }
+    function refund() external { require(block.timestamp>=deadline,"active"); uint amt=contributions[msg.sender]; contributions[msg.sender]=0; payable(msg.sender).transfer(amt); }
+}
