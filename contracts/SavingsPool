@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract SavingsPool {
+    mapping(address=>uint) public bal;
+    function deposit() external payable { bal[msg.sender]+=msg.value; }
+    function withdraw(uint amt) external { require(bal[msg.sender]>=amt); bal[msg.sender]-=amt; payable(msg.sender).transfer(amt); }
+    function totalOf(address a) external view returns(uint){ return bal[a]; }
+}
