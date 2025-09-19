@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract EscrowOpen {
+    address public buyer; address public seller; address public arbiter; uint public amount;
+    enum State{ AWAITING, FUNDED, RELEASED, REFUNDED } State public state;
+    constructor(address _seller,address _arbiter){ buyer=msg.sender; seller=_seller; arbiter=_arbiter; state=State.AWAITING; }
+    function fund() external payable { require(msg.sender==buyer,"only buyer"); amount+=msg.value; state=State.FUNDED; }
+    function release() external { require(msg.sender==arbiter,"arbiter only"); payable(seller).transfer(address(this).balance); state=State.RELEASED; }
+    function refund() external { require(msg.sender==arbiter,"arbiter only"); payable(buyer).transfer(address(this).balance); state=State.REFUNDED; }
+}

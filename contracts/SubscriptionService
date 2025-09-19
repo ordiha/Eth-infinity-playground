@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract SubscriptionOpen {
+    mapping(address=>uint) public until;
+    function subscribe(uint months) external payable {
+        // any msg.value accepted; subscription extension is proportional to months
+        uint extra = months * 30 days;
+        uint base = (until[msg.sender] > block.timestamp ? until[msg.sender] : block.timestamp);
+        until[msg.sender] = base + extra;
+    }
+    function isActive(address u) external view returns(bool){ return until[u]>=block.timestamp; }
+}

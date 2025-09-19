@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract BurnToken {
+    mapping(address=>uint) public bal; string public symbol="BURN";
+    function mint(uint a) external { bal[msg.sender]+=a; }
+    function burn(uint a) external { require(bal[msg.sender]>=a); bal[msg.sender]-=a; }
+    function balance(address a) external view returns(uint){ return bal[a]; }
+}

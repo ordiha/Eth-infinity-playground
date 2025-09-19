@@ -29,3 +29,37 @@ https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code
 
 ProjectToken: 0x8A78A66E45dFb17A7d2C2f54c0c265d62336591F
 https://basescan.org/address/0x8a78a66e45dfb17a7d2c2f54c0c265d62336591f#code
+
+BurnToken: 0xA94759CaeAD1b3b7bF5EAC55D70926b76d6F9788
+https://basescan.org/address/0xa94759caead1b3b7bf5eac55d70926b76d6f9788#code
+
+FaucetToken: 0x497C8C54B603b02Ab2a8f11387c5D6bEC19EE237
+https://basescan.org/address/0x497c8c54b603b02ab2a8f11387c5d6bec19ee237#code
+
+NameToken: 0x1da06bd89f7386E919934D396a18DfE123Ac2214
+https://basescan.org/address/0x1da06bd89f7386e919934d396a18dfe123ac2214#code
+
+ArtToken: 0x791DCE76c244DBb72e99F5f87BD843fF229f8BdE
+https://basescan.org/address/0x791dce76c244dbb72e99f5f87bd843ff229f8bde#code
+
+PraiseToken: 0xF98d56aCB775217409BA516c79ca5BAdf976125E
+https://basescan.org/address/0xf98d56acb775217409ba516c79ca5badf976125e#code
+
+MemoToken: 0xa4125F4dD0369Fa7b4153B6Fb26931d16Ac159A1
+https://basescan.org/address/0xa4125f4dd0369fa7b4153b6fb26931d16ac159a1#code
+
+KarmaToken: 0xF7147a1a15DaCe03308c57b6A8001a4E0dd5053a
+https://basescan.org/address/0xf7147a1a15dace03308c57b6a8001a4e0dd5053a#code
+
+DonationTracker2: 0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB
+https://basescan.org/address/0x9ddaf52d93fe53715dc510190b2ddd1d1cafa8fb#code
+
+EscrowOpen: 0x4e3DCAd4Cf1ac9cCdD93aC2b395C3fBA242c521b
+https://basescan.org/address/0x4e3dcad4cf1ac9ccdd93ac2b395c3fba242c521b#code
+
+CrowdfundingOpen: 0x6d0615e1dd679314213D39D06E5175322fDcc346
+https://basescan.org/address/0x6d0615e1dd679314213d39d06e5175322fdcc346#code
+
+Lottery: 0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf
+https://basescan.org/address/0x2edb3668a8c37a1b1d1934e4247da47fa2c73daf#code
+
