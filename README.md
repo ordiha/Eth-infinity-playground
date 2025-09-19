@@ -50,3 +50,7 @@ https://basescan.org/address/0xa4125f4dd0369fa7b4153b6fb26931d16ac159a1#code
 
 KarmaToken: 0xF7147a1a15DaCe03308c57b6A8001a4E0dd5053a
 https://basescan.org/address/0xf7147a1a15dace03308c57b6a8001a4e0dd5053a#code
+
+DonationTracker2: 0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB
+https://basescan.org/address/0x9ddaf52d93fe53715dc510190b2ddd1d1cafa8fb#code
+
