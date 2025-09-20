@@ -76,3 +76,6 @@ https://basescan.org/address/0x02c6f7cd3fc95c6895d1663fdf81882f680a43a8#code
 VotingOpen: 0x79e18a4e4f07b38E13E6E537C209CaEB78652531
 https://basescan.org/address/0x79e18a4e4f07b38e13e6e537c209caeb78652531#code
 
+MessageBoardOpen: 0xDDfc28B2C3B760b415465C60a0184e73fdd58f8c
+https://basescan.org/address/0xddfc28b2c3b760b415465c60a0184e73fdd58f8c#code
+
