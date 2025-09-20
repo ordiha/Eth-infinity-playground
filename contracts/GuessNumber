@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract GuessNumber {
+    uint public secret = uint(keccak256(abi.encodePacked(block.timestamp)))%1000;
+    event Try(address who,uint guess,bool correct);
+    function guess(uint g) external { bool ok = (g==secret); if(ok) secret = uint(keccak256(abi.encodePacked(block.timestamp,secret)))%1000; emit Try(msg.sender,g,ok); }
+}
