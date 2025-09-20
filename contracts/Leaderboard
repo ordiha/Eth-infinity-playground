@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract Leaderboard {
+    mapping(address=>uint) public best;
+    function submit(uint s) external { if(s>best[msg.sender]) best[msg.sender]=s; }
+    function top(address a) external view returns(uint){ return best[a]; }
+}
