@@ -88,3 +88,5 @@ https://basescan.org/address/0x3fbf1ec0b4794105480b946940c7dff6704ef93f#code
 ReputationPoints: 0xF3Ca99eBB3309Cae06B6163a72801A7E236a531d
 https://basescan.org/address/0xf3ca99ebb3309cae06b6163a72801a7e236a531d#code
 
+BadgeBoard: 0x3977E74324a40Fc36E66bD2841Bf5083fedA5f29
+https://basescan.org/address/0x3977e74324a40fc36e66bd2841bf5083feda5f29#code
