@@ -93,3 +93,6 @@ https://basescan.org/address/0x3977e74324a40fc36e66bd2841bf5083feda5f29#code
 
 OpenPolls: 0x427f7939832032FbF6D679E1B711d40b496BeFBb
 https://basescan.org/address/0x427f7939832032fbf6d679e1b711d40b496befbb#code
+
+MemoryChain: 0xE0Ac6DaFc6a2dcCF599502deC0CB4A8d12bCDDd2
+https://basescan.org/address/0xe0ac6dafc6a2dccf599502dec0cb4a8d12bcddd2#code
