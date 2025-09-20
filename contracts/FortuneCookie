@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract FortuneCookie {
+    string[] public fortunes;
+    event Fortune(address who,string text);
+    constructor(){ fortunes.push("Good luck"); fortunes.push("Try again"); fortunes.push("Surprise awaits"); }
+    function open() external {
+        uint i = uint(keccak256(abi.encodePacked(block.timestamp,block.prevrandao, msg.sender))) % fortunes.length;
+        emit Fortune(msg.sender,fortunes[i]);
+    }
+    function addFortune(string calldata s) external { fortunes.push(s); }
+}
