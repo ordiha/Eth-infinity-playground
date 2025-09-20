@@ -67,3 +67,6 @@ https://basescan.org/address/0x2edb3668a8c37a1b1d1934e4247da47fa2c73daf#code
 SavingsPool: 0xa43BC9AAFb69608a6bF1C84CBA1258bBa53d9B5D
 https://basescan.org/address/0xa43bc9aafb69608a6bf1c84cba1258bba53d9b5d#code
 
+TipPool: 0x48FC372AB9A289b4B885cDa740790d177441FD9F
+https://basescan.org/address/0x48fc372ab9a289b4b885cda740790d177441fd9f#code
+
