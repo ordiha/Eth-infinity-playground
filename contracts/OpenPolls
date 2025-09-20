@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract OpenPolls {
+    struct Poll{ string q; string[] opts; mapping(uint=>uint) votes; bool initialized; }
+    Poll[] public polls;
+    function create(string calldata q,string[] calldata opts) external { polls.push(); Poll storage p = polls[polls.length-1]; p.q=q; p.initialized=true; for(uint i=0;i<opts.length;i++) p.opts.push(opts[i]); }
+    function vote(uint pid,uint opt) external { Poll storage p=polls[pid]; p.votes[opt]++; }
+    function viewQuestion(uint pid) external view returns(string memory){ return polls[pid].q; }
+    function viewVote(uint pid,uint opt) external view returns(uint){ return polls[pid].votes[opt]; }
+}
