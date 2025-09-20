@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract CollectibleGame {
+    mapping(address=>uint[]) public items;
+    event Collected(address who,uint item);
+    function collect() external { uint id = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender)))%1000; items[msg.sender].push(id); emit Collected(msg.sender,id); }
+    function myItems(address a) external view returns(uint[] memory){ return items[a]; }
+}

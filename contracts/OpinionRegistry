@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract OpinionRegistry {
+    struct O{ address who; bool yes; string note; }
+    O[] public items;
+    function give(bool y,string calldata note) external { items.push(O(msg.sender,y,note)); }
+    function total() external view returns(uint){ return items.length; }
+    function get(uint i) external view returns(address,bool,string memory){ O storage o=items[i]; return (o.who,o.yes,o.note); }
+}

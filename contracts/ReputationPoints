@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract Reputation {
+    mapping(address=>uint) public rep;
+    function award(address who,uint amt) external { rep[who]+=amt; }
+    function score(address who) external view returns(uint){ return rep[who]; }
+}

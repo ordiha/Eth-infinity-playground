@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract RouletteSpin {
+    event Spin(address who,uint result,uint value);
+    function spin() external payable { uint r = uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, block.prevrandao))) % 37; emit Spin(msg.sender,r,msg.value); if(r==0) payable(msg.sender).transfer(address(this).balance); }
+    receive() external payable {}
+}

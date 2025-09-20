@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract RandomWords {
+    struct W{ address who; string word; uint ts; }
+    W[] public list;
+    event Word(address who,string word);
+    function mint(string calldata w) external { list.push(W(msg.sender,w,block.timestamp)); emit Word(msg.sender,w); }
+    function total() external view returns(uint){ return list.length; }
+    function get(uint i) external view returns(address,string memory,uint){ W storage w=list[i]; return (w.who,w.word,w.ts); }
+}

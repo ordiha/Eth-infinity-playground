@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract MessageBoardOpen {
+    struct Msg{ address who; string text; uint ts; }
+    Msg[] public msgs;
+    function post(string calldata t) external { msgs.push(Msg(msg.sender,t,block.timestamp)); }
+    function total() external view returns(uint){ return msgs.length; }
+    function get(uint i) external view returns(address,string memory,uint){ Msg storage m=msgs[i]; return (m.who,m.text,m.ts); }
+}
