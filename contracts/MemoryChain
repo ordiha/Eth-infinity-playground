@@ -1,0 +1,3 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract MemoryChain { struct M{address who; string text; uint ts;} M[] public mems; function add(string calldata t) external { mems.push(M(msg.sender,t,block.timestamp)); } function get(uint i) external view returns(address,string memory,uint){ M storage m=mems[i]; return (m.who,m.text,m.ts);} function total() external view returns(uint){ return mems.length; } }
