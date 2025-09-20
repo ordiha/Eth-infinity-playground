@@ -85,3 +85,6 @@ https://basescan.org/address/0xddfc28b2c3b760b415465c60a0184e73fdd58f8c#code
 SurveyBoard: 0x3fbf1Ec0B4794105480b946940c7DFF6704eF93f
 https://basescan.org/address/0x3fbf1ec0b4794105480b946940c7dff6704ef93f#code
 
+ReputationPoints: 0xF3Ca99eBB3309Cae06B6163a72801A7E236a531d
+https://basescan.org/address/0xf3ca99ebb3309cae06b6163a72801a7e236a531d#code
+
