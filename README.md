@@ -70,3 +70,6 @@ https://basescan.org/address/0xa43bc9aafb69608a6bf1c84cba1258bba53d9b5d#code
 TipPool: 0x48FC372AB9A289b4B885cDa740790d177441FD9F
 https://basescan.org/address/0x48fc372ab9a289b4b885cda740790d177441fd9f#code
 
+RandomPay: 0x02c6F7CD3FC95c6895D1663FDF81882f680A43A8
+https://basescan.org/address/0x02c6f7cd3fc95c6895d1663fdf81882f680a43a8#code
+
