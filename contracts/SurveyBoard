@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract SurveyBoard {
+    mapping(string=>uint) public counts;
+    function vote(string calldata choice) external { counts[choice]++; }
+    function score(string calldata choice) external view returns(uint){ return counts[choice]; }
+}
