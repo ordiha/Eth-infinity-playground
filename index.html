@@ -2,178 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Eth-Infinity-Playground</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🌌 Eth-Infinity-Playground</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
-      margin: 0;
-      padding: 0;
       text-align: center;
-    }
-    header {
-      padding: 2rem 1rem;
-      background: rgba(0,0,0,0.3);
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      padding: 20px;
     }
     h1 {
-      font-size: 2.2rem;
-      margin: 0;
-      color: #ffde59;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      font-size: 2.2em;
+      margin-bottom: 20px;
     }
-    .container {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 15px;
     }
     .card {
       background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 1rem;
+      border-radius: 12px;
+      padding: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s, background 0.3s;
     }
-    .card:hover {
-      transform: scale(1.03);
-      background: rgba(255,255,255,0.2);
-    }
-    .card h2 {
-      margin-top: 0;
-      color: #ffde59;
-    }
-    .card a {
-      display: block;
-      margin: 0.5rem 0;
+    a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 14px;
       text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      border: 1px solid #ffde59;
       border-radius: 8px;
-      padding: 0.5rem;
-      transition: background 0.3s;
+      background: #ff7f50;
+      color: #fff;
+      transition: 0.2s;
     }
-    .card a:hover {
-      background: #ffde59;
-      color: #000;
+    a:hover { background: #ff5722; }
+    .category {
+      font-size: 0.9em;
+      color: #ffd700;
     }
-    footer {
-      padding: 1rem;
-      background: rgba(0,0,0,0.4);
-      font-size: 0.9rem;
+    .example {
+      font-size: 0.85em;
+      color: #a8ffb5;
+      margin-top: 6px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🌐 Eth-Infinity-Playground</h1>
-    <p>Explore unlimited interactive contracts on Base</p>
-  </header>
+  <h1>🌌 Eth-Infinity-Playground</h1>
+  <p>Play with onchain experiments on <b>Base</b>. Unlimited interaction, no fixed fees.</p>
+  
+  <div class="grid">
+    <!-- NFTs -->
+    <div class="card"><h2>🎁 GiveawayNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xe5A241F05216696Bb396f1b86Adb064494dbf6A0#code">BaseScan</a><div class="example">Write → mint("Hello")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🖼 OpenMintNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code">BaseScan</a><div class="example">Write → mint("Any text")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎨 ColorNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x7e5b2523Da5D63e500b9b050f45f993b811c6548#code">BaseScan</a><div class="example">Write → mint("#FF0000")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>⏰ TimeNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x6A7b0FD9Ea1809a5F0F4369e191a0B021D11BCD5#code">BaseScan</a><div class="example">Write → mint()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🔄 EvolvingNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xFAb4D080D6b1AF6d84685148f9D6a7195f86b829#code">BaseScan</a><div class="example">Write → evolve(1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>😀 EmojiNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x2fdEf913F4a1bCD05ADA45F4556d54F6df5305e1#code">BaseScan</a><div class="example">Write → mint("😊")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🏅 FreeBadgeNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x2533d3769d333f96D446f9035d025cf986773D83#code">BaseScan</a><div class="example">Write → claim()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>💬 MessageNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xAC3fDF094d4167D8238ba980F70792E681b487A5#code">BaseScan</a><div class="example">Write → mint("My message")<br>Deploy Box → none</div></div>
 
-  <div class="container">
-    <div class="card">
-      <h2>GiveawayNFT</h2>
-      <a href="https://basescan.org/address/0xe5A241F05216696Bb396f1b86Adb064494dbf6A0#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>OpenMintNFT</h2>
-      <a href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>ColorNFT</h2>
-      <a href="https://basescan.org/address/0x7e5b2523Da5D63e500b9b050f45f993b811c6548#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>TimeNFT</h2>
-      <a href="https://basescan.org/address/0x6A7b0FD9Ea1809a5F0F4369e191a0B021D11BCD5#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>EvolvingNFT</h2>
-      <a href="https://basescan.org/address/0xFAb4D080D6b1AF6d84685148f9D6a7195f86b829#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>EmojiNFT</h2>
-      <a href="https://basescan.org/address/0x2fdEf913F4a1bCD05ADA45F4556d54F6df5305e1#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>FreeBadgeNFT</h2>
-      <a href="https://basescan.org/address/0x2533d3769d333f96D446f9035d025cf986773D83#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>MessageNFT</h2>
-      <a href="https://basescan.org/address/0xAC3fDF094d4167D8238ba980F70792E681b487A5#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>ProjectToken</h2>
-      <a href="https://basescan.org/address/0x8A78A66E45dFb17A7d2C2f54c0c265d62336591F#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>BurnToken</h2>
-      <a href="https://basescan.org/address/0xA94759CaeAD1b3b7bF5EAC55D70926b76d6F9788#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>FaucetToken</h2>
-      <a href="https://basescan.org/address/0x497C8C54B603b02Ab2a8f11387c5D6bEC19EE237#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>NameToken</h2>
-      <a href="https://basescan.org/address/0x1da06bd89f7386E919934D396a18DfE123Ac2214#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>ArtToken</h2>
-      <a href="https://basescan.org/address/0x791DCE76c244DBb72e99F5f87BD843fF229f8BdE#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>PraiseToken</h2>
-      <a href="https://basescan.org/address/0xF98d56aCB775217409BA516c79ca5BAdf976125E#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>MemoToken</h2>
-      <a href="https://basescan.org/address/0xa4125F4dD0369Fa7b4153B6Fb26931d16Ac159A1#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>KarmaToken</h2>
-      <a href="https://basescan.org/address/0xF7147a1a15DaCe03308c57b6A8001a4E0dd5053a#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>DonationTracker2</h2>
-      <a href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>EscrowOpen</h2>
-      <a href="https://basescan.org/address/0x4e3DCAd4Cf1ac9cCdD93aC2b395C3fBA242c521b#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>CrowdfundingOpen</h2>
-      <a href="https://basescan.org/address/0x6d0615e1dd679314213D39D06E5175322fDcc346#code" target="_blank">View on BaseScan</a>
-    </div>
-    <div class="card">
-      <h2>Lottery</h2>
-      <a href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code" target="_blank">View on BaseScan</a>
-    </div>
-  </div>
+    <!-- Tokens -->
+    <div class="card"><h2>💰 ProjectToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x8A78A66E45dFb17A7d2C2f54c0c265d62336591F#code">BaseScan</a><div class="example">Write → mint(1000)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🔥 BurnToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xA94759CaeAD1b3b7bF5EAC55D70926b76d6F9788#code">BaseScan</a><div class="example">Write → burn(100)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🚰 FaucetToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x497C8C54B603b02Ab2a8f11387c5D6bEC19EE237#code">BaseScan</a><div class="example">Write → faucet()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🔤 NameToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x1da06bd89f7386E919934D396a18DfE123Ac2214#code">BaseScan</a><div class="example">Write → mint(500)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎭 ArtToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x791DCE76c244DBb72e99F5f87BD843fF229f8BdE#code">BaseScan</a><div class="example">Write → mint(1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>👏 PraiseToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xF98d56aCB775217409BA516c79ca5BAdf976125E#code">BaseScan</a><div class="example">Write → praise("0x...")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>📝 MemoToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xa4125F4dD0369Fa7b4153B6Fb26931d16Ac159A1#code">BaseScan</a><div class="example">Write → mint(123)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>⚖️ KarmaToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xF7147a1a15DaCe03308c57b6A8001a4E0dd5053a#code">BaseScan</a><div class="example">Write → reward("0x...", 50)<br>Deploy Box → none</div></div>
 
-  <footer>
-    🌐 Built on Base — Eth-Infinity-Playground
-  </footer>
-
-  <script>
-    async function switchToBase() {
-      if (window.ethereum) {
-        try {
-          await ethereum.request({
-            method: 'wallet_switchEthereumChain',
-            params: [{ chainId: '0x2105' }] // Base mainnet
-          });
-        } catch (err) {
-          console.error('Network switch failed:', err);
-        }
-      }
-    }
-    switchToBase();
-  </script>
-</body>
-</html>
+    <!-- Utilities -->
+    <div class="card"><h2>❤️ DonationTracker2</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code">BaseScan</a><div class="example">Write → donate()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🤝 EscrowOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x4e3DCAd4Cf1ac9cCdD93aC2b395C3fBA242c521b#code">BaseScan</a><div class="example">Write → deposit()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>📢 CrowdfundingOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x6d0615e1dd679314213D39D06E5175322fDcc346#code">BaseScan</a><div class="example">Write → contribute()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎲 Lottery</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code">BaseScan</a><div class="example">Write → buyTicket()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🏦 SavingsPool</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xa43BC9AAFb69608a6bF1C84CBA1258bBa53d9B5D#code">BaseScan</a><div class="example">Write → deposit()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>💸 TipPool</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x48FC372AB9A289b4B885cDa740790d177441FD9F#code">BaseScan</a><div class="example">Write → tip("0x...", 1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎁 RandomPay</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x02c6F7CD3FC95c6895D1663FDF81882f680A43A8#code">BaseScan</a><div class="example">Write → deposit()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🗳 VotingOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x79e18a4e4f07b38E13E6E537C209CaEB78652531#code">BaseScan</a><div class="example">Write → vote(1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>💡 OpinionRegistry</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xE74706982Be1c7223E5855EA42DCF96F1104215B#code">BaseScan</a><div class="example">Write → addOpinion("Great!")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>📜 MessageBoardOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xDDfc28B2C3B760b415465C60a0184e73fdd58f8c#code">BaseScan</a><div class="example">Write → postMessage("Hi all")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>📊 SurveyBoard</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x3fbf1Ec0B4794105480b946940c7DFF6704eF93f#code">BaseScan</a><div class="example">Write → submitAnswer(1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>⭐ ReputationPoints</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xF3Ca99eBB3309Cae06B6163a72801A7E236a531d#code">BaseScan</a><div class="example">Write → reward("0x...", 10)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎖 BadgeBoard</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x3977E74324a40Fc36E66bD2841Bf5083fedA5f29#code">BaseScan</a><div class="example">Write → giveBadge("0x...", "Hero")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>📮 OpenPolls</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x427f7939832032FbF6D679E1B711d40b496BeFBb#code">BaseScan</a><div class="example">Write → createPoll("Best color?")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🧠 MemoryChain</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xE0Ac6DaFc6a2dcCF599502deC0CB4A8d12bCDDd2#code">BaseScan</a><div class="example">Write → addMemory("Idea")<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🔢 GuessNumber</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0xe5c4636C0249312fda74492A1a68094C1c08dA54#code">BaseScan</a><div class="example">Write → guess(7)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>✊ RockPaperScissors</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0xDe214a923048a2F97bE6dcBe664fA7192a7E66E5#code">BaseScan</a><div class="example">Write → play(1)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎨 RandomArt</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xC31D53E3ADb55Afb1734c0f8f01472dd660dd485#code">BaseScan</a><div class="example">Write → mint()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🃏 CollectibleGame</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xCdD6c5361327dD687a5007B3203ad7c28E9F6989#code">BaseScan</a><div class="example">Write → collect()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🏆 Leaderboard</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0x6dd734e20db7Fa8aD6273D1cF2289569436c80dA#code">BaseScan</a><div class="example">Write → addScore(100)<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🎰 RouletteSpin</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0xB0f6210ed2B197d03435080B13514d0A5eF83e74#code">BaseScan</a><div class="example">Write → spin()<br>Deploy Box → none</div></div>
+    <div class="card"><h2>🔮 RandomWords</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x9e6c59aE4C6230a85e932BD92708254f1425e82c#code">BaseScan</a><div class="example">Write → addWord("Magic")
