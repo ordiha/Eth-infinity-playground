@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+contract VotingOpen {
+    struct Proposal{ string desc; uint votes; }
+    Proposal[] public proposals;
+    function init(string[] memory p) public { for(uint i=0;i<p.length;i++) proposals.push(Proposal(p[i],0)); }
+    function vote(uint idx) public { require(idx<proposals.length); proposals[idx].votes++; }
+    function results(uint idx) public view returns(string memory,uint){ return (proposals[idx].desc, proposals[idx].votes); }
+}
