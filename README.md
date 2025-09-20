@@ -73,3 +73,6 @@ https://basescan.org/address/0x48fc372ab9a289b4b885cda740790d177441fd9f#code
 RandomPay: 0x02c6F7CD3FC95c6895D1663FDF81882f680A43A8
 https://basescan.org/address/0x02c6f7cd3fc95c6895d1663fdf81882f680a43a8#code
 
+VotingOpen: 0x79e18a4e4f07b38E13E6E537C209CaEB78652531
+https://basescan.org/address/0x79e18a4e4f07b38e13e6e537c209caeb78652531#code
+
