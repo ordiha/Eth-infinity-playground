@@ -96,3 +96,12 @@ https://basescan.org/address/0x427f7939832032fbf6d679e1b711d40b496befbb#code
 
 MemoryChain: 0xE0Ac6DaFc6a2dcCF599502deC0CB4A8d12bCDDd2
 https://basescan.org/address/0xe0ac6dafc6a2dccf599502dec0cb4a8d12bcddd2#code
+
+GuessNumber: 0xe5c4636C0249312fda74492A1a68094C1c08dA54
+https://basescan.org/address/0xe5c4636c0249312fda74492a1a68094c1c08da54#code
+
+RockPaperScissors: 0xDe214a923048a2F97bE6dcBe664fA7192a7E66E5
+https://basescan.org/address/0xde214a923048a2f97be6dcbe664fa7192a7e66e5#code
+
+RandomArt: 0xC31D53E3ADb55Afb1734c0f8f01472dd660dd485
+https://basescan.org/address/0xc31d53e3adb55afb1734c0f8f01472dd660dd485#code
