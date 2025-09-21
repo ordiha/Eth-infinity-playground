@@ -1,37 +1,23 @@
-# ❓ Frequently Asked Questions
+# Frequently Asked Questions
 
-### Q1. I get "execution reverted". Why?
-A: Usually because:
-- You didn’t connect wallet in "Write Contract".
-- You didn’t enter parameters correctly (e.g. wrong address).
-- Try again with a different input.
+### ❓ What is Eth-infinity-playground?
+A collection of 40+ experimental smart contracts deployed on Base for open interaction, testing, and creativity.
 
----
+### ❓ Do I need real ETH?
+Yes, it runs on **Base mainnet**. But you can interact with **tiny amounts** of ETH.
 
-### Q2. Can I interact many times?
-A: ✅ Yes. All contracts are designed for unlimited interaction.
+### ❓ Is there a fixed fee to use contracts?
+No. Contracts are designed to accept **any amount** — you choose.
 
----
+### ❓ Can I interact multiple times?
+Yes. No restriction. You can use contracts as often as you like.
 
-### Q3. Do I need ETH to use these?
-A: Some actions are free (minting), others need tiny gas fees.  
-Even **0.00000001 ETH** works.
+### ❓ How do I access the front page?
+Go here:  
+👉 https://ordiha.github.io/Eth-infinity-playground/
 
----
+### ❓ How do I see contract code?
+Each contract link opens in **BaseScan** with verified source code.
 
-### Q4. Why my NFT doesn’t show image?
-A: Some NFTs are **text-only** or simple placeholders.  
-Check token URI → `tokenURI(tokenId)`.
-
----
-
-### Q5. How to change to Base Mainnet?
-- Open MetaMask → Networks → Add Network  
-- RPC URL: `https://mainnet.base.org`  
-- Chain ID: `8453`  
-- Explorer: `https://basescan.org`
-
----
-
-### Q6. Can bots farm these contracts?
-A: ❌ Unlikely. Contracts include special patterns to reduce bot farming.
+### ❓ Can I add my own contracts?
+Yes. Fork the repo and submit via pull request.
