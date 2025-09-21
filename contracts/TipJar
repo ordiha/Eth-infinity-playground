@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TipJar {
+    mapping(address => uint256) public tipped;
+    uint256 public total;
+
+    event Tipped(address indexed from, uint256 amount);
+
+    receive() external payable {
+        tipped[msg.sender] += msg.value;
+        total += msg.value;
+        emit Tipped(msg.sender, msg.value);
+    }
+
+    function tip() external payable {
+        require(msg.value > 0, "zero");
+        tipped[msg.sender] += msg.value;
+        total += msg.value;
+        emit Tipped(msg.sender, msg.value);
+    }
+
+    function myTip(address a) external view returns (uint256) { return tipped[a]; }
+}

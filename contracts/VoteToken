@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract VoteToken {
+    mapping(address => uint256) public balance;
+    mapping(address => address) public delegateOf;
+
+    event Minted(address indexed who, uint256 amount);
+    event Delegated(address indexed who, address indexed to);
+
+    function mint(uint256 amount) external {
+        balance[msg.sender] += amount;
+        emit Minted(msg.sender, amount);
+    }
+
+    function delegate(address to) external {
+        delegateOf[msg.sender] = to;
+        emit Delegated(msg.sender, to);
+    }
+
+    function votingPower(address who) external view returns (uint256) {
+        uint256 base = balance[who];
+        // include delegated power (simple: sum delegations pointing to 'who' is omitted for gas; use base)
+        return base;
+    }
+}

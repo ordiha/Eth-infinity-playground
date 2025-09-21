@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PixelArtNFT {
+    uint256 public idx;
+    mapping(uint256 => address) public ownerOf;
+    mapping(uint256 => string) public artOf;
+
+    event PixelMint(address indexed who, uint256 id, string art);
+
+    function mint(string calldata art) external {
+        idx++;
+        ownerOf[idx] = msg.sender;
+        artOf[idx] = art;
+        emit PixelMint(msg.sender, idx, art);
+    }
+
+    function read(uint256 id) external view returns (address, string memory) {
+        return (ownerOf[id], artOf[id]);
+    }
+}
