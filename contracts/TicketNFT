@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TicketNFT {
+    uint256 public nextId;
+    mapping(uint256 => address) public ownerOf;
+    mapping(uint256 => string) public info;
+
+    event TicketMinted(address indexed who, uint256 id, string info);
+
+    function mint(string calldata infoStr) external {
+        nextId++;
+        ownerOf[nextId] = msg.sender;
+        info[nextId] = infoStr;
+        emit TicketMinted(msg.sender, nextId, infoStr);
+    }
+
+    function read(uint256 id) external view returns (address, string memory) {
+        return (ownerOf[id], info[id]);
+    }
+}
