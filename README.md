@@ -129,3 +129,6 @@ https://basescan.org/address/0xccce9a2549f17e35998956a4f23fd34e9a084665#code
 
 QuestBoard: 0x6dB4ACd14c8492c8e4Df051bDb05162734Fa13D3
 https://basescan.org/address/0x6db4acd14c8492c8e4df051bdb05162734fa13d3#code
+
+DailyReward: 0x622AB99b5767D533221ed7Cd0424973069A504eE
+https://basescan.org/address/0x622ab99b5767d533221ed7cd0424973069a504ee#code
