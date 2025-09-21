@@ -1,14 +1,12 @@
-# 🌌 Vision — Eth-Infinity-Playground
+# Vision
 
-This repository is a **public playground** for smart contract interactions on Base.  
-The goal is to provide:
+**Eth-infinity-playground** is designed as an **infinite experimental lab** for Ethereum & Base.
 
-- 📚 **Learning tool** → anyone can test contracts without fear.  
-- 🎨 **Creative experiments** → fun NFTs, colorful tokens, evolving assets.  
-- 💡 **Developer showcase** → improve Builder Score with many deployed contracts.  
-- 🕹 **Unlimited interaction** → no restrictions, no barriers, no one-time limits.  
+## Goals
+- Open interaction: anyone can join with any ETH amount.
+- Simplicity: no complicated restrictions, free to use repeatedly.
+- Variety: NFTs, tokens, games, experiments.
+- Transparency: all contracts deployed, verified, and public.
 
-Future direction:
-- Add 40+ unique contracts.  
-- Provide simple frontends.  
-- Expand into social experiments on-chain.  
+## Long-Term Idea
+To build a living archive of **community-driven smart contracts**, growing over time with new experiments and creative use cases.
