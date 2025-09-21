@@ -117,3 +117,6 @@ https://basescan.org/address/0xb0f6210ed2b197d03435080b13514d0a5ef83e74#code
 
 RandomWords: 0x8c50e96a9a269d8102A1ec3815849465cE49E7ea
 https://basescan.org/address/0x8c50e96a9a269d8102a1ec3815849465ce49e7ea#code
+
+TicketNFT: 0x488D4d61e28FF44f7059CC176C81096Fb8BB4D55
+https://basescan.org/address/0x488d4d61e28ff44f7059cc176c81096fb8bb4d55#code
