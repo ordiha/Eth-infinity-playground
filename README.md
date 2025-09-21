@@ -132,3 +132,6 @@ https://basescan.org/address/0x6db4acd14c8492c8e4df051bdb05162734fa13d3#code
 
 DailyReward: 0x622AB99b5767D533221ed7Cd0424973069A504eE
 https://basescan.org/address/0x622ab99b5767d533221ed7cd0424973069a504ee#code
+
+ChainMessage: 0x88a9dB30a1eC8f6713047C96ab205Fc9A938832C
+https://basescan.org/address/0x88a9db30a1ec8f6713047c96ab205fc9a938832c#code
