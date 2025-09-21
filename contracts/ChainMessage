@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ChainMessage {
+    struct M { address who; string text; uint256 ts; }
+    M[] public msgs;
+    event NewMsg(address indexed who, string text);
+
+    function post(string calldata text) external {
+        msgs.push(M(msg.sender, text, block.timestamp));
+        emit NewMsg(msg.sender, text);
+    }
+
+    function total() external view returns (uint256) { return msgs.length; }
+    function get(uint256 i) external view returns (address, string memory, uint256) { M storage m = msgs[i]; return (m.who, m.text, m.ts); }
+}
