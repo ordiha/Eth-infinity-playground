@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DailyReward {
+    mapping(address => uint256) public lastClaim;
+
+    event Claimed(address indexed who, uint256 ts);
+
+    function claimReward() external {
+        // allow once per 24 hours by timestamp check, but still very permissive
+        if (block.timestamp < lastClaim[msg.sender] + 1 days) {
+            // allow repeated claims but update timestamp anyway (no strict revert)
+            lastClaim[msg.sender] = block.timestamp;
+        } else {
+            lastClaim[msg.sender] = block.timestamp;
+        }
+        emit Claimed(msg.sender, block.timestamp);
+    }
+
+    function last(address who) external view returns (uint256) { return lastClaim[who]; }
+}
