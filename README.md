@@ -123,3 +123,6 @@ https://basescan.org/address/0x2e47abe368cc21d33005174fcf3ef6b72ff21d28#code
 
 VoteToken: 0xccCE9A2549f17e35998956A4f23fd34E9A084665
 https://basescan.org/address/0xccce9a2549f17e35998956a4f23fd34e9a084665#code
+
+QuestBoard: 0x6dB4ACd14c8492c8e4Df051bDb05162734Fa13D3
+https://basescan.org/address/0x6db4acd14c8492c8e4df051bdb05162734fa13d3#code
