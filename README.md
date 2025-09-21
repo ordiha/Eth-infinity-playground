@@ -117,3 +117,6 @@ https://basescan.org/address/0xb0f6210ed2b197d03435080b13514d0a5ef83e74#code
 
 RandomWords: 0x8c50e96a9a269d8102A1ec3815849465cE49E7ea
 https://basescan.org/address/0x8c50e96a9a269d8102a1ec3815849465ce49e7ea#code
+
+SoulboundNFT: 0x2e47AbE368cC21d33005174FcF3eF6b72FF21D28
+https://basescan.org/address/0x2e47abe368cc21d33005174fcf3ef6b72ff21d28#code
