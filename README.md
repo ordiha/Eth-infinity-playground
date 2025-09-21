@@ -120,3 +120,6 @@ https://basescan.org/address/0x8c50e96a9a269d8102a1ec3815849465ce49e7ea#code
 
 SoulboundNFT: 0x2e47AbE368cC21d33005174FcF3eF6b72FF21D28
 https://basescan.org/address/0x2e47abe368cc21d33005174fcf3ef6b72ff21d28#code
+
+VoteToken: 0xccCE9A2549f17e35998956A4f23fd34E9A084665
+https://basescan.org/address/0xccce9a2549f17e35998956a4f23fd34e9a084665#code
