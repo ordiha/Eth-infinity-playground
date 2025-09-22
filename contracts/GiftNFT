@@ -1,12 +1,23 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-contract GiftNFT is ERC721URIStorage {
+
+contract GiftNFT {
+    string public name = "GiftNFT";
+    string public symbol = "GIFT";
     uint256 public nextId;
-    constructor() ERC721("GiftNFT", "GIFT") {}
-    function mint(string memory message) external {
-        _safeMint(msg.sender, nextId);
-        _setTokenURI(nextId, message);
-        nextId++;
+    mapping(uint256 => address) public ownerOf;
+    mapping(uint256 => string) public meta;
+
+    event Minted(address indexed who, uint256 id, string message);
+
+    function mint(string calldata message) external {
+        uint256 id = nextId++;
+        ownerOf[id] = msg.sender;
+        meta[id] = message;
+        emit Minted(msg.sender, id, message);
+    }
+
+    function tokenMeta(uint256 id) external view returns (string memory) {
+        return meta[id];
     }
 }
