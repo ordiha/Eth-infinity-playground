@@ -144,3 +144,6 @@ https://basescan.org/address/0x7c958a5344482a698e77ee9b961285647c9961e1#code
 
 GiftNFT: 0x8E62324AC8DB7DfDa70AA1e2fC8F3BD11132C2c0
 https://basescan.org/address/0x8e62324ac8db7dfda70aa1e2fc8f3bd11132c2c0#code
+
+SimpleStable: 0x022443D36300CE9EB9b8539619b3D16b0cdF9827
+https://basescan.org/address/0x022443d36300ce9eb9b8539619b3d16b0cdf9827#writeContract
