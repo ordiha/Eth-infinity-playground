@@ -141,3 +141,6 @@ https://basescan.org/address/0x488d4d61e28ff44f7059cc176c81096fb8bb4d55#code
 
 LuckyNumber: 0x7C958a5344482A698E77EE9b961285647C9961E1
 https://basescan.org/address/0x7c958a5344482a698e77ee9b961285647c9961e1#code
+
+GiftNFT: 0x8E62324AC8DB7DfDa70AA1e2fC8F3BD11132C2c0
+https://basescan.org/address/0x8e62324ac8db7dfda70aa1e2fc8f3bd11132c2c0#code
