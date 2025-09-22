@@ -147,3 +147,6 @@ https://basescan.org/address/0x8e62324ac8db7dfda70aa1e2fc8f3bd11132c2c0#code
 
 SimpleStable: 0x022443D36300CE9EB9b8539619b3D16b0cdF9827
 https://basescan.org/address/0x022443d36300ce9eb9b8539619b3d16b0cdf9827#writeContract
+
+KudosToken: 0x223412cEFFBfad0eEAc430635ef07A851990a18a
+https://basescan.org/address/0x223412ceffbfad0eeac430635ef07a851990a18a#code
