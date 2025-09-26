@@ -4,15 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🌌 Eth-Infinity-Playground</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+    .connect-row {
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 8px 14px;
+      background: #ff7f50;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn:hover { background: #ff5722; }
+    .addr, .chain {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+    h2 { margin-top: 0; font-size: 1.2em; }
+    .small { font-size: 0.85em; color: #ffd700; margin-bottom: 5px; }
+    input { width: 90%; padding: 6px; margin-bottom: 6px; border-radius: 6px; border: none; }
+    .status { font-size: 0.85em; color: #a8ffb5; margin-bottom: 5px; }
+    a.link { color: #ff7f50; text-decoration: none; font-size: 0.85em; }
+    a.link:hover { color: #ff5722; }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
   <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
 </head>
 <body>
-  <header class="top">
+  <header>
     <h1>🌌 Eth-Infinity-Playground</h1>
     <p>50 onchain experiments on <b>Base</b>. Verified contracts & simple Write examples.</p>
-
     <div class="connect-row">
       <button id="btnConnect" class="btn">🔗 Connect Wallet</button>
       <div id="addr" class="addr">Not connected</div>
@@ -21,38 +70,37 @@
   </header>
 
   <main class="grid" id="cards">
-    <!-- Example contract cards (extend later) -->
-
+    <!-- Sample NFT Card -->
     <section class="card">
       <h2>🖼 OpenMintNFT</h2>
       <div class="small">Call: <code>mint(string)</code></div>
       <input id="openMintText" placeholder="Text to mint" />
       <button onclick="actions.mintOpen()">Mint</button>
       <div class="status" id="statusOpen"></div>
-      <a class="link" href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code" target="_blank">View on BaseScan</a>
+      <a class="link" href="https://basescan.org/address/0x79f6e18a8376b02b35c1d5c02da86ec03ca6d57d#code" target="_blank">View on BaseScan</a>
     </section>
 
     <section class="card">
-      <h2>💬 OpinionRegistry</h2>
-      <div class="small">Call: <code>addOpinion(string)</code></div>
-      <input id="opinionText" placeholder="Write opinion..." />
-      <button onclick="actions.addOpinion()">Submit</button>
-      <div class="status" id="statusOpinion"></div>
-      <a class="link" href="https://basescan.org/address/0xe74706982be1c7223e5855ea42dcf96f1104215b#code" target="_blank">View on BaseScan</a>
+      <h2>🎨 ColorNFT</h2>
+      <div class="small">Call: <code>mint(string)</code></div>
+      <input id="colorNFTText" placeholder="Color (e.g., #FF0000)" />
+      <button onclick="actions.mintColorNFT()">Mint</button>
+      <div class="status" id="statusColorNFT"></div>
+      <a class="link" href="https://basescan.org/address/0x7e5b2523da5d63e500b9b050f45f993b811c6548#code" target="_blank">View on BaseScan</a>
     </section>
 
     <section class="card">
-      <h2>🔢 GuessNumber</h2>
-      <div class="small">Call: <code>guess(uint256)</code></div>
-      <input id="guessNumber" type="number" placeholder="Enter a number" />
-      <button onclick="actions.guessNumber()">Guess</button>
-      <div class="status" id="statusGuess"></div>
-      <a class="link" href="https://basescan.org/address/0xe5c4636c0249312fda74492a1a68094c1c08da54#code" target="_blank">View on BaseScan</a>
+      <h2>⏰ TimeNFT</h2>
+      <div class="small">Call: <code>mint()</code></div>
+      <button onclick="actions.mintTimeNFT()">Mint</button>
+      <div class="status" id="statusTimeNFT"></div>
+      <a class="link" href="https://basescan.org/address/0x6a7b0fd9ea1809a5f0f4369e191a0b021d11bcd5#code" target="_blank">View on BaseScan</a>
     </section>
 
+    <!-- Add more cards for each contract as needed... -->
   </main>
 
-  <footer class="foot">
+  <footer>
     <div>Repo: <code>eth-infinity-playground</code></div>
     <div id="txLog" class="txlog"></div>
   </footer>
