@@ -1,108 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>🌌 Eth-Infinity-Playground</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
-    }
-    p {
-      margin-bottom: 30px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 15px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    a {
-      display: inline-block;
-      margin: 5px;
-      padding: 8px 14px;
-      text-decoration: none;
-      border-radius: 8px;
-      background: #ff7f50;
-      color: #fff;
-      transition: 0.2s;
-    }
-    a:hover { background: #ff5722; }
-    .category {
-      font-size: 0.9em;
-      color: #ffd700;
-    }
-    .example {
-      font-size: 0.85em;
-      color: #a8ffb5;
-      margin-top: 6px;
-    }
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg,#1e3c72,#2a5298); color:#fff; text-align:center; padding:20px; }
+    h1 { font-size:2.2em; margin-bottom:10px; }
+    p { margin-bottom:30px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:15px; }
+    .card { background:rgba(255,255,255,0.1); border-radius:12px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
+    button { margin-top:8px; padding:8px 12px; border:none; border-radius:8px; background:#ff7f50; color:#fff; cursor:pointer; }
+    input { width:90%; padding:6px 8px; border-radius:6px; border:none; margin-top:6px; }
+    .status { margin-top:6px; font-size:0.9em; color:#a8ffb5; min-height:18px; }
+    a { color:#ffd; font-size:0.85em; display:block; margin-top:6px; text-decoration:none; }
   </style>
 </head>
 <body>
   <h1>🌌 Eth-Infinity-Playground</h1>
-  <p>50 onchain experiments on <b>Base</b>. Verified contracts & simple Write examples.</p>
-  
+  <p>Interact with Base contracts via WalletConnect or MetaMask/Rabby.</p>
+
+  <div style="margin-bottom:20px;">
+    <button onclick="actions.connectWallet()">🔗 Connect Wallet</button>
+    <span id="walletAddress">Not connected</span>
+  </div>
+
   <div class="grid">
+    <!-- Example contracts -->
+    <div class="card">
+      <h2>🖼 OpenMintNFT</h2>
+      <input id="openMintText" placeholder="Text to mint" />
+      <button onclick="actions.callContract('0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d', openMintABI, 'mint', [document.getElementById('openMintText').value])">Mint</button>
+      <div class="status" id="statusOpen"></div>
+      <a href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code" target="_blank">View on BaseScan</a>
+    </div>
 
-    <!-- NFTs -->
-    <div class="card"><h2>🎁 GiveawayNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xe5a241f05216696bb396f1b86adb064494dbf6a0#code">BaseScan</a><div class="example">Write → mint("Hello")</div></div>
-    <div class="card"><h2>🖼 OpenMintNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x79f6e18a8376b02b35c1d5c02da86ec03ca6d57d#code">BaseScan</a><div class="example">Write → mint("Any text")</div></div>
-    <div class="card"><h2>🎨 ColorNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x7e5b2523da5d63e500b9b050f45f993b811c6548#code">BaseScan</a><div class="example">Write → mint("#FF0000")</div></div>
-    <div class="card"><h2>⏰ TimeNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x6a7b0fd9ea1809a5f0f4369e191a0b021d11bcd5#code">BaseScan</a><div class="example">Write → mint()</div></div>
-    <div class="card"><h2>🔄 EvolvingNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xfab4d080d6b1af6d84685148f9d6a7195f86b829#code">BaseScan</a><div class="example">Write → evolve(1)</div></div>
-    <div class="card"><h2>😀 EmojiNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x2fdef913f4a1bcd05ada45f4556d54f6df5305e1#code">BaseScan</a><div class="example">Write → mint("😊")</div></div>
-    <div class="card"><h2>🏅 FreeBadgeNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x2533d3769d333f96d446f9035d025cf986773d83#code">BaseScan</a><div class="example">Write → claim()</div></div>
-    <div class="card"><h2>🕒 TimeNFT (Alt)</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xb98216021f341f33828ade87fbf543428f564aeb#code">BaseScan</a><div class="example">Write → mint()</div></div>
-    <div class="card"><h2>💬 MessageNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0xac3fdf094d4167d8238ba980f70792e681b487a5#code">BaseScan</a><div class="example">Write → mint("My message")</div></div>
-    <div class="card"><h2>🔗 SoulboundNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x2e47abe368cc21d33005174fcf3ef6b72ff21d28#code">BaseScan</a><div class="example">Write → claim()</div></div>
-    <div class="card"><h2>🖌 PixelArtNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x34d7857b4c843bda08703d2b0be9b4c163ae122a#code">BaseScan</a><div class="example">Write → mintPixel("#00FF00")</div></div>
-    <div class="card"><h2>🎟 TicketNFT</h2><p class="category">ERC721 (NFT)</p><a href="https://basescan.org/address/0x488d4d61e28ff44f7059cc176c81096fb8bb4d55#code">BaseScan</a><div class="example">Write → claimTicket()</div></div>
+    <div class="card">
+      <h2>💬 OpinionRegistry</h2>
+      <input id="opinionText" placeholder="Write opinion..." />
+      <button onclick="actions.callContract('0xE74706982Be1c7223E5855EA42DCF96F1104215B', opinionABI, 'addOpinion', [document.getElementById('opinionText').value])">Submit</button>
+      <div class="status" id="statusOpinion"></div>
+      <a href="https://basescan.org/address/0xE74706982Be1c7223E5855EA42DCF96F1104215B#code" target="_blank">View on BaseScan</a>
+    </div>
 
-    <!-- Tokens -->
-    <div class="card"><h2>💰 ProjectToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x8a78a66e45dfb17a7d2c2f54c0c265d62336591f#code">BaseScan</a><div class="example">Write → mint(1000)</div></div>
-    <div class="card"><h2>🔥 BurnToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xa94759caead1b3b7bf5eac55d70926b76d6f9788#code">BaseScan</a><div class="example">Write → burn(100)</div></div>
-    <div class="card"><h2>🚰 FaucetToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x497c8c54b603b02ab2a8f11387c5d6bec19ee237#code">BaseScan</a><div class="example">Write → faucet()</div></div>
-    <div class="card"><h2>🔤 NameToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x1da06bd89f7386e919934d396a18dfe123ac2214#code">BaseScan</a><div class="example">Write → mint(500)</div></div>
-    <div class="card"><h2>🎭 ArtToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0x791dce76c244dbb72e99f5f87bd843ff229f8bde#code">BaseScan</a><div class="example">Write → mint(1)</div></div>
-    <div class="card"><h2>👏 PraiseToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xf98d56acb775217409ba516c79ca5badf976125e#code">BaseScan</a><div class="example">Write → praise("0x...")</div></div>
-    <div class="card"><h2>📝 MemoToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xa4125f4dd0369fa7b4153b6fb26931d16ac159a1#code">BaseScan</a><div class="example">Write → mint(123)</div></div>
-    <div class="card"><h2>⚖️ KarmaToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xf7147a1a15dace03308c57b6a8001a4e0dd5053a#code">BaseScan</a><div class="example">Write → reward("0x...", 50)</div></div>
-    <div class="card"><h2>🗳 VoteToken</h2><p class="category">ERC20 (Token)</p><a href="https://basescan.org/address/0xccce9a2549f17e35998956a4f23fd34e9a084665#code">BaseScan</a><div class="example">Write → vote(1)</div></div>
+    <div class="card">
+      <h2>🎲 Lottery</h2>
+      <input id="lotteryEth" type="number" placeholder="ETH amount" step="0.00000001" />
+      <button onclick="actions.callContract('0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf', lotteryABI, 'buyTicket', [], parseFloat(document.getElementById('lotteryEth').value))">Buy Ticket</button>
+      <div class="status" id="statusLottery"></div>
+      <a href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code" target="_blank">View on BaseScan</a>
+    </div>
 
-    <!-- Utilities -->
-    <div class="card"><h2>❤️ DonationTracker2</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x9ddaf52d93fe53715dc510190b2ddd1d1cafa8fb#code">BaseScan</a><div class="example">Write → donate()</div></div>
-    <div class="card"><h2>🤝 EscrowOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x4e3dcad4cf1ac9ccdd93ac2b395c3fba242c521b#code">BaseScan</a><div class="example">Write → deposit()</div></div>
-    <div class="card"><h2>📢 CrowdfundingOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x6d0615e1dd679314213d39d06e5175322fdcc346#code">BaseScan</a><div class="example">Write → contribute()</div></div>
-    <div class="card"><h2>🎲 Lottery</h2><p class="category">Utility / Game</p><a href="https://basescan.org/address/0x2edb3668a8c37a1b1d1934e4247da47fa2c73daf#code">BaseScan</a><div class="example">Write → buyTicket()</div></div>
-    <div class="card"><h2>🏦 SavingsPool</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xa43bc9aafb69608a6bf1c84cba1258bba53d9b5d#code">BaseScan</a><div class="example">Write → deposit()</div></div>
-    <div class="card"><h2>💸 TipPool</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x48fc372ab9a289b4b885cda740790d177441fd9f#code">BaseScan</a><div class="example">Write → tip("0x...", 1)</div></div>
-    <div class="card"><h2>🎁 RandomPay</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x02c6f7cd3fc95c6895d1663fdf81882f680a43a8#code">BaseScan</a><div class="example">Write → deposit()</div></div>
-    <div class="card"><h2>🗳 VotingOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x79e18a4e4f07b38e13e6e537c209caeb78652531#code">BaseScan</a><div class="example">Write → vote(1)</div></div>
-    <div class="card"><h2>💡 OpinionRegistry</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xe74706982be1c7223e5855ea42dcf96f1104215b#code">BaseScan</a><div class="example">Write → addOpinion("Great!")</div></div>
-    <div class="card"><h2>📜 MessageBoardOpen</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xddfc28b2c3b760b415465c60a0184e73fdd58f8c#code">BaseScan</a><div class="example">Write → postMessage("Hi all")</div></div>
-    <div class="card"><h2>📊 SurveyBoard</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x3fbf1ec0b4794105480b946940c7dff6704ef93f#code">BaseScan</a><div class="example">Write → submitAnswer(1)</div></div>
-    <div class="card"><h2>⭐ ReputationPoints</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xf3ca99ebb3309cae06b6163a72801a7e236a531d#code">BaseScan</a><div class="example">Write → reward("0x...", 10)</div></div>
-    <div class="card"><h2>🎖 BadgeBoard</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x3977e74324a40fc36e66bd2841bf5083feda5f29#code">BaseScan</a><div class="example">Write → giveBadge("0x...", "Hero")</div></div>
-    <div class="card"><h2>📮 OpenPolls</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x427f7939832032fbf6d679e1b711d40b496befbb#code">BaseScan</a><div class="example">Write → createPoll("Best color?")</div></div>
-    <div class="card"><h2>🧠 MemoryChain</h2><p class="category">Utility</p><a href="https://basescan.org/address/0xe0ac6dafc6a2dccf599502dec0cb4a8d12bcddd2#code">BaseScan</a><div class="example">Write → addMemory("Idea")</div></div>
-    <div class="card"><h2>📨 ChainMessage</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x88a9db30a1ec8f6713047c96ab205fc9a938832c#code">BaseScan</a><div class="example">Write → post("Onchain note")</div></div>
-    <div class="card"><h2>🎯 QuestBoard</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x6db4acd14c8492c8e4df051bdb05162734fa13d3#code">BaseScan</a><div class="example">Write → completeQuest(1)</div></div>
-    <div class="card"><h2>⏳ DailyReward</h2><p class="category">Utility</p><a href="https://basescan.org/address/0x622ab99b5767d533221ed7cd0424973069a504ee#code">BaseScan</a><div class="example">Write → claim()</div></div>
+    <div class="card">
+      <h2>❤️ DonationTracker2</h2>
+      <input id="donateEth" type="number" placeholder="ETH amount" step="0.00000001" />
+      <button onclick="actions.callContract('0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB', donateABI, 'donate', [], parseFloat(document.getElementById('donateEth').value))">Donate</button>
+      <div class="status" id="statusDonate"></div>
+      <a href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code" target="_blank">View on BaseScan</a>
+    </div>
 
-    <!-- Games -->
-    <div class="card"><h2>🔢 GuessNumber</h2><p class="category">Game</p><a href="https://basescan.org/address/0xe5c4636c0249312fda74492a1a68094c1c08da54#code">BaseScan</a><div class="example">Write → guess(7)</div></div>
-    <div class="card"><h2>✊ RockPaperScissors</h2><p class="category">Game</p><a href="https://basescan.org/address/0xde214a923048a2f97be6dcbe664fa7192a7e66e5#code">BaseScan</a><div class="example">Write → play(1)</div></div>
-    <div class
+    <div class="card">
+      <h2>🔢 GuessNumber</h2>
+      <input id="guessNumber" type="number" placeholder="Enter a number" />
+      <button onclick="actions.callContract('0xe5c4636C0249312fda74492A1a68094C1c08dA54', guessABI, 'guess', [parseInt(document.getElementById('guessNumber').value)])">Guess</button>
+      <div class="status" id="statusGuess"></div>
+      <a href="https://basescan.org/address/0xe5c4636C0249312fda74492A1a68094C1c08dA54#code" target="_blank">View on BaseScan</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+  <script src="wc-scripts.js"></script>
+</body>
+</html>
