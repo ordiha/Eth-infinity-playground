@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
   <title>🌌 Eth-Infinity-Playground</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: linear-gradient(135deg,#1e3c72,#2a5298); color:#fff; text-align:center; padding:20px; }
-    h1 { font-size:2.2em; margin-bottom:10px; }
-    p { margin-bottom:30px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:15px; }
-    .card { background:rgba(255,255,255,0.1); border-radius:12px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
-    button { margin-top:8px; padding:8px 12px; border:none; border-radius:8px; background:#ff7f50; color:#fff; cursor:pointer; }
-    input { width:90%; padding:6px 8px; border-radius:6px; border:none; margin-top:6px; }
-    .status { margin-top:6px; font-size:0.9em; color:#a8ffb5; min-height:18px; }
-    a { color:#ffd; font-size:0.85em; display:block; margin-top:6px; text-decoration:none; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
 </head>
 <body>
   <h1>🌌 Eth-Infinity-Playground</h1>
-  <p>Interact with Base contracts via WalletConnect or MetaMask/Rabby.</p>
+  <p>Interact with verified Base contracts directly via WalletConnect or MetaMask/Rabby.</p>
 
-  <div style="margin-bottom:20px;">
-    <button onclick="actions.connectWallet()">🔗 Connect Wallet</button>
-    <span id="walletAddress">Not connected</span>
-  </div>
+  <button id="btnConnect" class="btn" style="margin-bottom:20px;">🔗 Connect Wallet</button>
+  <div id="addr" class="addr">Not connected</div>
+  <div id="chain" class="chain"></div>
 
-  <div class="grid">
-    <!-- Example contracts -->
-    <div class="card">
+  <main class="grid">
+    <section class="card">
       <h2>🖼 OpenMintNFT</h2>
+      <div class="small">mint(string)</div>
       <input id="openMintText" placeholder="Text to mint" />
-      <button onclick="actions.callContract('0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d', openMintABI, 'mint', [document.getElementById('openMintText').value])">Mint</button>
+      <button onclick="actions.mintOpen()">Mint</button>
       <div class="status" id="statusOpen"></div>
-      <a href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code" target="_blank">View on BaseScan</a>
-    </div>
+      <a class="link" href="https://basescan.org/address/0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d#code" target="_blank">View on BaseScan</a>
+    </section>
 
-    <div class="card">
-      <h2>💬 OpinionRegistry</h2>
-      <input id="opinionText" placeholder="Write opinion..." />
-      <button onclick="actions.callContract('0xE74706982Be1c7223E5855EA42DCF96F1104215B', opinionABI, 'addOpinion', [document.getElementById('opinionText').value])">Submit</button>
-      <div class="status" id="statusOpinion"></div>
-      <a href="https://basescan.org/address/0xE74706982Be1c7223E5855EA42DCF96F1104215B#code" target="_blank">View on BaseScan</a>
-    </div>
-
-    <div class="card">
-      <h2>🎲 Lottery</h2>
-      <input id="lotteryEth" type="number" placeholder="ETH amount" step="0.00000001" />
-      <button onclick="actions.callContract('0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf', lotteryABI, 'buyTicket', [], parseFloat(document.getElementById('lotteryEth').value))">Buy Ticket</button>
-      <div class="status" id="statusLottery"></div>
-      <a href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code" target="_blank">View on BaseScan</a>
-    </div>
-
-    <div class="card">
+    <section class="card">
       <h2>❤️ DonationTracker2</h2>
+      <div class="small">donate() payable</div>
       <input id="donateEth" type="number" placeholder="ETH amount" step="0.00000001" />
-      <button onclick="actions.callContract('0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB', donateABI, 'donate', [], parseFloat(document.getElementById('donateEth').value))">Donate</button>
+      <button onclick="actions.donate()">Donate</button>
       <div class="status" id="statusDonate"></div>
-      <a href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code" target="_blank">View on BaseScan</a>
-    </div>
+      <a class="link" href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code" target="_blank">View on BaseScan</a>
+    </section>
 
-    <div class="card">
+    <section class="card">
+      <h2>🎲 Lottery</h2>
+      <div class="small">buyTicket() payable</div>
+      <input id="lotteryEth" type="number" placeholder="ETH amount" step="0.00000001" />
+      <button onclick="actions.buyTicket()">Buy Ticket</button>
+      <div class="status" id="statusLottery"></div>
+      <a class="link" href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code" target="_blank">View on BaseScan</a>
+    </section>
+
+    <section class="card">
+      <h2>💬 OpinionRegistry</h2>
+      <div class="small">addOpinion(string)</div>
+      <input id="opinionText" placeholder="Write opinion..." />
+      <button onclick="actions.addOpinion()">Submit</button>
+      <div class="status" id="statusOpinion"></div>
+      <a class="link" href="https://basescan.org/address/0xE74706982Be1c7223E5855EA42DCF96F1104215B#code" target="_blank">View on BaseScan</a>
+    </section>
+
+    <section class="card">
       <h2>🔢 GuessNumber</h2>
+      <div class="small">guess(uint256)</div>
       <input id="guessNumber" type="number" placeholder="Enter a number" />
-      <button onclick="actions.callContract('0xe5c4636C0249312fda74492A1a68094C1c08dA54', guessABI, 'guess', [parseInt(document.getElementById('guessNumber').value)])">Guess</button>
+      <button onclick="actions.guessNumber()">Guess</button>
       <div class="status" id="statusGuess"></div>
-      <a href="https://basescan.org/address/0xe5c4636C0249312fda74492A1a68094C1c08dA54#code" target="_blank">View on BaseScan</a>
-    </div>
-  </div>
+      <a class="link" href="https://basescan.org/address/0xe5c4636C0249312fda74492A1a68094C1c08dA54#code" target="_blank">View on BaseScan</a>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
-  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+    <section class="card">
+      <h2>🎁 GiveawayNFT</h2>
+      <div class="small">mint(string)</div>
+      <input id="giveawayText" placeholder="Text to mint" />
+      <button onclick="actions.mintGiveaway()">Mint</button>
+      <div class="status" id="statusGiveaway"></div>
+      <a class="link" href="https://basescan.org/address/0xe5a241f05216696bb396f1b86adb064494dbf6a0#code" target="_blank">View on BaseScan</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>Repo: <code>Eth-infinity-playground</code></div>
+    <div id="txLog" class="txlog"></div>
+  </footer>
+
   <script src="wc-scripts.js"></script>
 </body>
 </html>
