@@ -2,10 +2,9 @@ let web3;
 let accounts;
 let provider;
 
-// Connect Wallet button
+// Connect Wallet
 document.getElementById("btnConnect").addEventListener("click", async () => {
   try {
-    // If injected wallet (MetaMask, Rabby)
     if (window.ethereum) {
       provider = window.ethereum;
       await provider.request({ method: "eth_requestAccounts" });
@@ -15,10 +14,9 @@ document.getElementById("btnConnect").addEventListener("click", async () => {
       return;
     }
 
-    // WalletConnect fallback
     const WalletConnectProvider = window.WalletConnectProvider.default;
     provider = new WalletConnectProvider({
-      infuraId: "a1172cd3024e252eb241f9ac3c9076fb" // Playground project ID
+      infuraId: "a1172cd3024e252eb241f9ac3c9076fb"
     });
 
     await provider.enable();
@@ -37,53 +35,38 @@ function showWallet(addr) {
   document.getElementById("chain").innerText = "Connected";
 }
 
-// Example contract interactions
+// Contract interactions
 const actions = {
   async mintOpen() {
     try {
       const txt = document.getElementById("openMintText").value;
-      const contract = new web3.eth.Contract([{
-        "inputs":[{"internalType":"string","name":"_text","type":"string"}],
-        "name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"
-      }], "0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d");
-
+      const contract = new web3.eth.Contract([{"inputs":[{"internalType":"string","name":"_text","type":"string"}],"name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"}], "0x79f6e18a8376b02b35C1D5C02DA86Ec03cA6d57d");
       const tx = await contract.methods.mint(txt).send({ from: accounts[0] });
       document.getElementById("statusOpen").innerText = `Tx: ${tx.transactionHash}`;
     } catch(e) {
-      console.error(e);
       document.getElementById("statusOpen").innerText = `Error: ${e.message}`;
     }
   },
 
-  async addOpinion() {
+  async mintColorNFT() {
     try {
-      const txt = document.getElementById("opinionText").value;
-      const contract = new web3.eth.Contract([{
-        "inputs":[{"internalType":"string","name":"_opinion","type":"string"}],
-        "name":"addOpinion","outputs":[],"stateMutability":"nonpayable","type":"function"
-      }], "0xE74706982Be1c7223E5855EA42DCF96F1104215B");
-
-      const tx = await contract.methods.addOpinion(txt).send({ from: accounts[0] });
-      document.getElementById("statusOpinion").innerText = `Tx: ${tx.transactionHash}`;
+      const txt = document.getElementById("colorNFTText").value;
+      const contract = new web3.eth.Contract([{"inputs":[{"internalType":"string","name":"_color","type":"string"}],"name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"}], "0x7e5b2523da5d63e500b9b050f45f993b811c6548");
+      const tx = await contract.methods.mint(txt).send({ from: accounts[0] });
+      document.getElementById("statusColorNFT").innerText = `Tx: ${tx.transactionHash}`;
     } catch(e) {
-      console.error(e);
-      document.getElementById("statusOpinion").innerText = `Error: ${e.message}`;
+      document.getElementById("statusColorNFT").innerText = `Error: ${e.message}`;
     }
   },
 
-  async guessNumber() {
+  async mintTimeNFT() {
     try {
-      const num = document.getElementById("guessNumber").value;
-      const contract = new web3.eth.Contract([{
-        "inputs":[{"internalType":"uint256","name":"_guess","type":"uint256"}],
-        "name":"guess","outputs":[],"stateMutability":"nonpayable","type":"function"
-      }], "0xe5c4636C0249312fda74492a1a68094C1c08dA54");
-
-      const tx = await contract.methods.guess(num).send({ from: accounts[0] });
-      document.getElementById("statusGuess").innerText = `Tx: ${tx.transactionHash}`;
+      const contract = new web3.eth.Contract([{"inputs":[],"name":"mint","outputs":[],"stateMutability":"nonpayable","type":"function"}], "0x6a7b0fd9ea1809a5f0f4369e191a0b021d11bcd5");
+      const tx = await contract.methods.mint().send({ from: accounts[0] });
+      document.getElementById("statusTimeNFT").innerText = `Tx: ${tx.transactionHash}`;
     } catch(e) {
-      console.error(e);
-      document.getElementById("statusGuess").innerText = `Error: ${e.message}`;
+      document.getElementById("statusTimeNFT").innerText = `Error: ${e.message}`;
     }
   }
-};
+
+  // Extend
