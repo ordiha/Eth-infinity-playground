@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🌌 Eth-Infinity-Playground</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
   <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
 </head>
 <body>
-  <h1>🌌 Eth-Infinity-Playground</h1>
-  <p>Interact with verified Base contracts directly via WalletConnect or MetaMask/Rabby.</p>
+  <header class="top">
+    <h1>🌌 Eth-Infinity-Playground</h1>
+    <p>50 onchain experiments on <b>Base</b>. Verified contracts & simple Write examples.</p>
 
-  <button id="btnConnect" class="btn" style="margin-bottom:20px;">🔗 Connect Wallet</button>
-  <div id="addr" class="addr">Not connected</div>
-  <div id="chain" class="chain"></div>
+    <div class="connect-row">
+      <button id="btnConnect" class="btn">🔗 Connect Wallet</button>
+      <div id="addr" class="addr">Not connected</div>
+      <div id="chain" class="chain"></div>
+    </div>
+  </header>
 
-  <main class="grid">
+  <main class="grid" id="cards">
+    <!-- Example contract cards (extend later) -->
+
     <section class="card">
       <h2>🖼 OpenMintNFT</h2>
-      <div class="small">mint(string)</div>
+      <div class="small">Call: <code>mint(string)</code></div>
       <input id="openMintText" placeholder="Text to mint" />
       <button onclick="actions.mintOpen()">Mint</button>
       <div class="status" id="statusOpen"></div>
@@ -26,53 +33,27 @@
     </section>
 
     <section class="card">
-      <h2>❤️ DonationTracker2</h2>
-      <div class="small">donate() payable</div>
-      <input id="donateEth" type="number" placeholder="ETH amount" step="0.00000001" />
-      <button onclick="actions.donate()">Donate</button>
-      <div class="status" id="statusDonate"></div>
-      <a class="link" href="https://basescan.org/address/0x9dDAf52D93FE53715dC510190b2DDD1d1CafA8fB#code" target="_blank">View on BaseScan</a>
-    </section>
-
-    <section class="card">
-      <h2>🎲 Lottery</h2>
-      <div class="small">buyTicket() payable</div>
-      <input id="lotteryEth" type="number" placeholder="ETH amount" step="0.00000001" />
-      <button onclick="actions.buyTicket()">Buy Ticket</button>
-      <div class="status" id="statusLottery"></div>
-      <a class="link" href="https://basescan.org/address/0x2eDb3668A8c37a1b1D1934e4247da47FA2c73daf#code" target="_blank">View on BaseScan</a>
-    </section>
-
-    <section class="card">
       <h2>💬 OpinionRegistry</h2>
-      <div class="small">addOpinion(string)</div>
+      <div class="small">Call: <code>addOpinion(string)</code></div>
       <input id="opinionText" placeholder="Write opinion..." />
       <button onclick="actions.addOpinion()">Submit</button>
       <div class="status" id="statusOpinion"></div>
-      <a class="link" href="https://basescan.org/address/0xE74706982Be1c7223E5855EA42DCF96F1104215B#code" target="_blank">View on BaseScan</a>
+      <a class="link" href="https://basescan.org/address/0xe74706982be1c7223e5855ea42dcf96f1104215b#code" target="_blank">View on BaseScan</a>
     </section>
 
     <section class="card">
       <h2>🔢 GuessNumber</h2>
-      <div class="small">guess(uint256)</div>
+      <div class="small">Call: <code>guess(uint256)</code></div>
       <input id="guessNumber" type="number" placeholder="Enter a number" />
       <button onclick="actions.guessNumber()">Guess</button>
       <div class="status" id="statusGuess"></div>
-      <a class="link" href="https://basescan.org/address/0xe5c4636C0249312fda74492A1a68094C1c08dA54#code" target="_blank">View on BaseScan</a>
+      <a class="link" href="https://basescan.org/address/0xe5c4636c0249312fda74492a1a68094c1c08da54#code" target="_blank">View on BaseScan</a>
     </section>
 
-    <section class="card">
-      <h2>🎁 GiveawayNFT</h2>
-      <div class="small">mint(string)</div>
-      <input id="giveawayText" placeholder="Text to mint" />
-      <button onclick="actions.mintGiveaway()">Mint</button>
-      <div class="status" id="statusGiveaway"></div>
-      <a class="link" href="https://basescan.org/address/0xe5a241f05216696bb396f1b86adb064494dbf6a0#code" target="_blank">View on BaseScan</a>
-    </section>
   </main>
 
   <footer class="foot">
-    <div>Repo: <code>Eth-infinity-playground</code></div>
+    <div>Repo: <code>eth-infinity-playground</code></div>
     <div id="txLog" class="txlog"></div>
   </footer>
 
